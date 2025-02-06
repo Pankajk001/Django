@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+db.sqlite3  # If using SQLite
+.env  # If you have an environment file

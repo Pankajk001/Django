@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   This is Home Page of Chai App
+{% endblock %}
+
+{% block content %}
+    <h1>This is Home Page of Chai App</h1>
+
+    <div class="grid grid-cols-3 gap-4 m-4">
+
+    {% for chai in chais  %}
+        <div class="bg-blue-900 p-5 flex flex-col rounded">
+            <img class="rounded shadow-2xl" src="{{chai.image.url}}" alt="">
+            <h3 class="ml-8 mt-1  font-bold"> {{chai.name}} </h3>
+
+            <a href="{% url 'chai_detail' chai.id%}">
+                <button
+                    type = "button"
+                    class = "inline-flex w-[100%] items-center justify-center px-3 py-1 mt-1 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                >
+                    {{chai.type}} - {{chai.id}}
+                </button>
+            </a>
+        </div>
+    
+    
+    
+    {% endfor %}
+
+</div>
+
+{% endblock %}
